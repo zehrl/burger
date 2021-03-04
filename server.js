@@ -1,27 +1,31 @@
 const express = require ("express");
 const exphbs  = require('express-handlebars');
 const path = require ("path");
+const orm = require ("./config/orm");
 // const routes = require ("./routes");
 
+// Allows us to use .env file
+require('dotenv').config();
+
+// Setup express app & port
 const app = express();
 const port = process.env.PORT || 3000;
-
-// const db = require("./models");
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// app.use(routes);
-
 // Setup handlebars template engine
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-// ----- ROUTES -----
+// // ----- ROUTES -----
+
 app.get('/', (req, res) => {
-    res.render('home');
+    res.render('index');
 })
+
+console.log(`process.env = ${process.env.DB_PASS}`)
 
 // db.sequelize.sync().then(() => {
     let time = new Date;
