@@ -8,7 +8,7 @@ if (process.env.JAWSDB_URL) {
         host: "localhost",
         user: "root",
         password: process.env.DB_PASS,
-        database: "burgerDB"
+        database: "burgers_db"
     });
 };
 
