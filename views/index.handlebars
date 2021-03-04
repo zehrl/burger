@@ -1,32 +1,97 @@
-<div class="container px-sm-10">
+{{!-- JUMBOTRON --}}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Eat-the-Burger</h1>
+    <p class="lead">The most delicious app on the web.</p>
+</div>
 
-    <div class="jumbotron">
-        <h1 class="display-4">Burger App</h1>
-        <p class="lead">The most delicious app on the web.</p>
-    </div>
+{{!-- CONTENT --}}
+<div class="container">
 
-    <div class="row">
+    <div class="row d-flex justify-content-center">
 
-        <div class="col col-md-6">
+        <div class="col col-md-10">
 
-            <div class="card">
+            {{!-- BURGER FORM --}}
+            <form>
+
+                {{!-- ENTRY BOX --}}
+                <div class="form-row">
+                    <div class="col-12">
+                        <label for="burgerInput">Insert burger name</label>
+                    </div>
+                </div>
+
+                {{!-- BUTTON --}}
+                <div class="form-row">
+                    <div class="col-sm-8 mb-3">
+                        <input type="text" class="form-control" id="burgerInput" placeholder="ex. Krabby Patty">
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+
+            {{!-- READY TO EAT BURGERS --}}
+            <div class="card my-3 bg-light">
+                <div class="card-header">
+                    Ready to Eat Burgers
+                </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item d-flex justify-content-between align-items-center">1. Krabby Patty
-                        <button type="button" class="btn btn-secondary">Secondary</button>
+                        <button type="button" class="btn btn-primary">🍔 Consume!</button>
                     </li>
                 </ul>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">2. Double Krabby Patty
+                        <button type="button" class="btn btn-primary">🍔 Consume!</button>
+                    </li>
+                </ul>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">3. Triple Krabby Patty
+                        <button type="button" class="btn btn-primary">🍔 Consume!</button>
+                    </li>
+                </ul>
+
             </div>
 
-        </div>
+            {{!-- CONSUMED BURGERs --}}
+            <div class="card my-3 bg-warning">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    Consumed Burgers
+                    <button type="button" class="btn btn-light">Reset</button>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">1. Krabby Patty</li>
+                </ul>
 
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">2. Double Krabby Patty
+                    </li>
+                </ul>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">3. Triple Krabby Patty
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+{{!-- <form>
+    <div class="form-group">
+        <label for="burgerInput">Insert burger name</label>
+        <input type="text" class="form-control" id="burgerInput" placeholder="ex. Krabby Patty">
     </div>
 
-    {{!-- <form>
-        <div class="form-group">
-            <label for="burgerInput">Insert burger name</label>
-            <input type="text" class="form-control" id="burgerInput" placeholder="ex. Krabby Patty">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit Burger</button>
-    </form> --}}
-
-</div>
+    <button type="submit" class="btn btn-primary">Submit Burger</button>
+</form> --}}
