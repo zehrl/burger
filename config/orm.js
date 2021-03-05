@@ -32,10 +32,9 @@ const orm = {
             })
     },
 
-    // deleteAll();
-    deleteAll: (table, column, value, cb) => {
+    updateAll: (table, whereColumn, whereValue, columnToUpdate, newValue, cb) => {
         connection.query(
-            `DELETE FROM ${table} WHERE ${column} = ${value}`,
+            `UPDATE ${table} SET ${columnToUpdate} = ${newValue} WHERE ${whereColumn} = ${whereValue}`,
             (err, result) => {
                 if (err) { throw (err) }
                 cb(result);

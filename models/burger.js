@@ -19,8 +19,8 @@ const burger = {
         })
     },
 
-    deleteDevoured: (column, value, cb) => {
-        orm.deleteAll("burgers", column, value, (result) => {
+    hideDevoured: (whereColumn, whereValue, columnToUpdate, newValue, cb) => {
+        orm.updateAll("burgers", whereColumn, whereValue, columnToUpdate, newValue, (result) => {
             cb(result)
         })
     }

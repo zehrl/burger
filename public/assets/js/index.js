@@ -28,7 +28,6 @@ $(function () {
 
         // If null or just spaces, then disable button
         if ((burgerInputVal === "") || (burgerInputVal.length > 64)) {
-            console.log("Null or >64 characters")
             $('#burger-submit-btn').attr('disabled', true);
             $('#burger-submit-btn').attr('aria-disabled', true);
         } else {
@@ -77,14 +76,13 @@ $(function () {
             });
     })
 
-    // handle deleting entry in burgers_db
+    // handle hiding entries in burgers_db
     $("#reset-btn").on("click", () => {
         $.ajax("/api/burger/devoured", {
-            type: "DELETE"
+            type: "PUT"
         }).then(() => {
             // update local storage to trigger toast on reload
             burgerLS.setItem('didReset', true);
-
         })
             .then(() => {
                 location.reload();

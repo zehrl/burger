@@ -29,8 +29,8 @@ router.put('/api/burger/devour/:id', (req, res) => {
     })
 })
 
-router.delete('/api/burger/devoured', (req, res) => {
-    burger.deleteDevoured("devoured", "true", (result) => {
+router.put('/api/burger/devoured', (req, res) => {
+    burger.hideDevoured("devoured", "true", "display", "false", (result) => {
         res.json(result);
     })
 })

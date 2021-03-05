@@ -105,7 +105,9 @@
         </div>
         {{#each burger}}
         {{#if devoured}}
+        {{#if display}}
         {{> burger-consumed}}
+        {{/if}}
         {{/if}}
         {{/each}}
 
