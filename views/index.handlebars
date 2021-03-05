@@ -1,11 +1,11 @@
 {{!-- JUMBOTRON --}}
-<div class="jumbotron text-center">
-    <h1 class="display-4">Eat-the-Burger</h1>
-    <p class="lead">The most delicious app on the web.</p>
+<div id="burger-jumbotron" class="jumbotron text-center">
+    <h1 id="burger-title" class="display-4">Eat-the-Burger</h1>
+    <p id="slogan" class="lead">The most delicious app on the web.</p>
 </div>
 
 {{!-- CONTENT --}}
-<div class="container">
+<div id="content" class="container">
 
     <div class="row d-flex justify-content-center">
 
@@ -39,7 +39,7 @@
             {{!-- READY TO EAT BURGERS --}}
             <div class="card my-3 bg-light">
                 <div class="card-header">
-                    Ready to Eat Burgers
+                    🤤 Ready to Eat Burgers
                 </div>
                 {{#each burger}}
                 {{#unless devoured}}
@@ -51,7 +51,7 @@
             {{!-- CONSUMED BURGERs --}}
             <div class="card my-3 bg-warning">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    Consumed Burgers
+                    🍽️ Consumed Burgers
                     <button type="button" id="reset-btn" class="btn btn-light">♻️ Reset</button>
                 </div>
                 {{#each burger}}
