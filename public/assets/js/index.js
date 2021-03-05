@@ -1,10 +1,4 @@
 $(function() {
-    // // Initialize
-    // const initialize = () => {
-    //     // render "Ready to Eat Burgers" list items
-    //     // render "Consumed Burgers" list items
-
-    // }
 
     // Submit burger
         // handle inserting data into burgers_db
