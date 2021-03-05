@@ -21,6 +21,24 @@ $(function () {
 
     burgerLS.clear();
 
+    // Disable submit button when there is no input
+    $('#burger-input').keyup(function (event) {
+        // Determine input value
+        const burgerInputVal = $('#burger-input').val().trim();
+
+        // If null or just spaces, then disable button
+        if (burgerInputVal === "") {
+            console.log("It's null or just spaces! value: ", burgerInputVal)
+            $('#burger-submit-btn').attr('disabled', true);
+            $('#burger-submit-btn').attr('aria-disabled', true);
+        } else {
+            console.log('Removing disabled class from button.')
+            $('#burger-submit-btn').removeAttr('disabled');
+            $('#burger-submit-btn').removeAttr('aria-disabled');
+
+        }
+    })
+
     // Submit burger
     $("#burger-form").submit(function (event) {
         event.preventDefault();
