@@ -27,8 +27,8 @@ $(function () {
         const burgerInputVal = $('#burger-input').val().trim();
 
         // If null or just spaces, then disable button
-        if (burgerInputVal === "") {
-            console.log("It's null or just spaces! value: ", burgerInputVal)
+        if ((burgerInputVal === "") || (burgerInputVal.length > 64)) {
+            console.log("Null or >64 characters")
             $('#burger-submit-btn').attr('disabled', true);
             $('#burger-submit-btn').attr('aria-disabled', true);
         } else {
@@ -90,8 +90,4 @@ $(function () {
                 location.reload();
             });
     })
-
-
-
-    console.log('$consumedToast: ', $consumedToast);
 });
