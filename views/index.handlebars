@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="form-row">
-                    
+
                     {{!-- INPUT BOX --}}
                     <div class="col-sm-8 mb-3">
                         <input type="text" class="form-control" id="burger-input" placeholder="ex. Krabby Patty">
@@ -36,6 +36,16 @@
 
             </form>
 
+
+        </div>
+
+
+    </div>
+
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-md-6">
+
             {{!-- READY TO EAT BURGERS --}}
             <div class="card my-3 bg-light">
                 <div class="card-header">
@@ -47,6 +57,10 @@
                 {{/unless}}
                 {{/each}}
             </div>
+
+        </div>
+
+        <div class="col-md-6">
 
             {{!-- CONSUMED BURGERs --}}
             <div class="card my-3 bg-warning">
@@ -61,17 +75,7 @@
                 {{/each}}
 
             </div>
-
         </div>
     </div>
+
 </div>
-
-
-{{!-- <form>
-    <div class="form-group">
-        <label for="burgerInput">Insert burger name</label>
-        <input type="text" class="form-control" id="burgerInput" placeholder="ex. Krabby Patty">
-    </div>
-
-    <button type="submit" class="btn btn-primary">Submit Burger</button>
-</form> --}}
