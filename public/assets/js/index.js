@@ -28,7 +28,7 @@ $(function () {
         const $burgerInput = $("#burger-input")
 
         const newBurger = {
-            burgerName: $burgerInput.val()
+            burgerName: $burgerInput.val().trim()
         }
 
         // handle inserting data into burgers_db
