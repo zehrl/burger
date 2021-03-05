@@ -1,8 +1,21 @@
 $(function() {
+    // Elements
+    let $burgerInput = $("#burger-input")
+
+    // Values
+    let burgerInput = $burgerInput.val()
+
+
 
     // Submit burger
         // handle inserting data into burgers_db
         // clear entry box
+    $("#burger-form").submit(function(event) {
+        event.preventDefault();
+
+        console.log(`burgerInput = ${burgerInput}`)
+    })
+
 
     // Consume burger
         // handle deleting entry in burgers_db

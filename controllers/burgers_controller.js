@@ -14,4 +14,10 @@ router.get('/', (req, res) => {
     })
 });
 
+router.post('/api/burger', ({body}, res) => {
+    burger.insertOne(body.burger_name, () => {
+        res.redirect('/')
+    })
+})
+
 module.exports = router;
