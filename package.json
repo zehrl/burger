@@ -4,7 +4,8 @@
   "description": "A restaurant app that lets users input the names of burger they'd like to eat",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "test": "nodemon server.js"
   },
   "repository": {
     "type": "git",
