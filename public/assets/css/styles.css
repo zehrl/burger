@@ -36,6 +36,14 @@
 
 /* ----- CONTENT ----- */
 
+#reset-btn, .consume-btn {
+    margin: -6px 0px;
+}
+
+#consumed-burgers-header {
+    margin: -1px 0px;
+}
+
 /* ----- MEDIA QUERIES ----- */
 
 /* 477 px - 2.7rem, font-size: 2.7rem*/
