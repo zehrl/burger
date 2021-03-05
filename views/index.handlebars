@@ -51,7 +51,11 @@
                     Consumed Burgers
                     <button type="button" class="btn btn-light">♻️ Reset</button>
                 </div>
-                {{> burger-consumed}}
+                {{#each burger}}
+                    {{#if devoured}}
+                        {{> burger-consumed}}
+                    {{/if}}
+                {{/each}}
 
             </div>
 
