@@ -38,7 +38,11 @@
                 <div class="card-header">
                     Ready to Eat Burgers
                 </div>
-                {{> burger}}
+                {{#each burger}}
+                    {{#unless devoured}}
+                        {{> burger }}
+                    {{/unless}}
+                {{/each}}
             </div>
 
             {{!-- CONSUMED BURGERs --}}
