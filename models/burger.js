@@ -14,7 +14,13 @@ const burger = {
     },
 
     updateOne: (burgerId, cb) => {
-        orm.insertOne("burgers", burgerId, (result) => {
+        orm.updateOne("burgers", burgerId, (result) => {
+            cb(result)
+        })
+    },
+
+    deleteDevoured: (column, value, cb) => {
+        orm.deleteAll("burgers", column, value, (result) => {
             cb(result)
         })
     }

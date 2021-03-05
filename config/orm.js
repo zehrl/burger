@@ -25,15 +25,22 @@ const orm = {
     // updateOne();
     updateOne: (table, burgerId, cb) => {
         connection.query(
-            `UPDATE ${table} SET devoured = true WHERE id = ${burgerId}`, 
-        (err, result) => {
-            if (err) { throw (err) }
-            cb(result);
-        })
+            `UPDATE ${table} SET devoured = true WHERE id = "${burgerId}"`,
+            (err, result) => {
+                if (err) { throw (err) }
+                cb(result);
+            })
+    },
+
+    // deleteAll();
+    deleteAll: (table, column, value, cb) => {
+        connection.query(
+            `DELETE FROM ${table} WHERE ${column} = ${value}`,
+            (err, result) => {
+                if (err) { throw (err) }
+                cb(result);
+            })
     }
-
-    // deleteConsumed();
-
 }
 
 module.exports = orm;

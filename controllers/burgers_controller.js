@@ -26,4 +26,10 @@ router.put('/api/burger/devour/:id', (req, res) => {
     })
 })
 
+router.delete('/api/burger/devoured', (req, res) => {
+    burger.deleteDevoured("devoured", "true", (result) => {
+        res.json(result);
+    })
+})
+
 module.exports = router;
