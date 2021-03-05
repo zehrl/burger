@@ -13,16 +13,24 @@ const orm = {
     },
 
     // insertOne();
-    insertOne: (table, burger_name, cb) => {
+    insertOne: (table, burgerName, cb) => {
         connection.query(
-            `INSERT INTO ${table} (burger_name) VALUES ("${burger_name.toString()}")`,
+            `INSERT INTO ${table} (burger_name) VALUES ("${burgerName.toString()}")`,
             (err, result) => {
                 if (err) { throw (err) }
                 cb(result);
             })
-    }
+    },
 
     // updateOne();
+    updateOne: (table, burgerId, cb) => {
+        connection.query(
+            `UPDATE ${table} SET devoured = true WHERE id = ${burgerId}`, 
+        (err, result) => {
+            if (err) { throw (err) }
+            cb(result);
+        })
+    }
 
     // deleteConsumed();
 

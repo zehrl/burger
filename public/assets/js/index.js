@@ -24,7 +24,22 @@ $(function () {
     })
 
 
-    // Consume burger
+    // devoured burger
+    $(".consume-btn").on("click", function (event) {
+        console.log(this)
+        const burgerId = $(this).data("id");
+        console.log(`burgerId: ${burgerId}`);
+
+        $.ajax("/api/burger/devour/" + burgerId, {
+            type: "PUT",
+          }).then(
+            function() {
+              console.log("Devoured burger.");
+            //   location.reload();
+            }
+          );
+    })
+
     // handle deleting entry in burgers_db
     // render "Ready to Eat Burgers" list items
 
