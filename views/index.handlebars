@@ -5,6 +5,8 @@
 </div>
 
 {{!-- TOASTS --}}
+
+{{!-- When a Ready to Eat burger is consumed --}}
 <div class="toast-container position-fixed bottom-0 right-0 p-3" style="z-index: 5; left: 0; top: 0;">
   <div id="consumed-toast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
     <div class="toast-header">
@@ -19,6 +21,7 @@
   </div>
 </div>
 
+{{!-- When Consumed Burgers table is reset --}}
 <div class="toast-container position-fixed bottom-0 right-0 p-3" style="z-index: 5; left: 0; top: 0;">
   <div id="reset-toast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
     <div class="toast-header">
@@ -94,7 +97,7 @@
             {{!-- CONSUMED BURGERs --}}
             <div class="card my-3 bg-warning">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    🍽️ Consumed Burgers
+                    🍽️ Consumed Burgers (total: {{consumedCount}})
                     <button type="button" id="reset-btn" class="btn btn-light">♻️ Reset</button>
                 </div>
                 {{#each burger}}
