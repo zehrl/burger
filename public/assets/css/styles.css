@@ -9,11 +9,6 @@
     background-position: left;
     background-size: 163%;
     background-repeat: no-repeat;
-    /* background-origin: padding-box; */
-    /* background-clip: border-box; */
-    /* background-attachment: scroll; */
-    /* background-color: transparent; */
-    /* Add the blur effect */
 
 }
 
@@ -29,11 +24,17 @@
     background-color: transparent;
 }
 
-/* ----- CONTENT ----- */
+/* ----- TOASTS ----- */
+.toast-container, .toast-x-btn {
+    background-color: transparent !important;
+}
 
-/* #content {
-    background-color: #e1dd8f;
-} */
+.toast, .toast-header, .toast-header-title{
+    background-color: white !important;
+}
+
+
+/* ----- CONTENT ----- */
 
 /* ----- MEDIA QUERIES ----- */
 

@@ -4,6 +4,35 @@
     <p id="slogan" class="lead">The most delicious app on the web.</p>
 </div>
 
+{{!-- TOASTS --}}
+<div class="toast-container position-fixed bottom-0 right-0 p-3" style="z-index: 5; left: 0; top: 0;">
+  <div id="consumed-toast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+    <div class="toast-header">
+      <strong class="toast-header-title mr-auto">Burger Notification</strong>
+      <button type="button" class="ml-2 mb-1 close toast-x-btn" data-dismiss="toast" aria-label="Close">
+        <span class="toast-x-btn" aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Yum! That burger was delicious!
+    </div>
+  </div>
+</div>
+
+<div class="toast-container position-fixed bottom-0 right-0 p-3" style="z-index: 5; left: 0; top: 0;">
+  <div id="reset-toast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+    <div class="toast-header">
+      <strong class="toast-header-title mr-auto">Burger Notification</strong>
+      <button type="button" class="ml-2 mb-1 close toast-x-btn" data-dismiss="toast" aria-label="Close">
+        <span class="toast-x-btn" aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Consumed Burgers reset!
+    </div>
+  </div>
+</div>
+
 {{!-- CONTENT --}}
 <div id="content" class="container">
 
