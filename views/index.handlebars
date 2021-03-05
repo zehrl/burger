@@ -14,18 +14,21 @@
             {{!-- BURGER FORM --}}
             <form id="burger-form">
 
-                {{!-- ENTRY BOX --}}
+                {{!-- LABEL --}}
                 <div class="form-row">
                     <div class="col-12">
                         <label for="burger-input">Insert burger name</label>
                     </div>
                 </div>
 
-                {{!-- SUBMIT --}}
                 <div class="form-row">
+                    
+                    {{!-- INPUT BOX --}}
                     <div class="col-sm-8 mb-3">
                         <input type="text" class="form-control" id="burger-input" placeholder="ex. Krabby Patty">
                     </div>
+
+                    {{!-- SUBMIT --}}
                     <div class="col-sm-4">
                         <button type="submit" class="btn btn-primary btn-block">Submit</button>
                     </div>
@@ -39,9 +42,9 @@
                     Ready to Eat Burgers
                 </div>
                 {{#each burger}}
-                    {{#unless devoured}}
-                        {{> burger }}
-                    {{/unless}}
+                {{#unless devoured}}
+                {{> burger }}
+                {{/unless}}
                 {{/each}}
             </div>
 
@@ -52,9 +55,9 @@
                     <button type="button" class="btn btn-light">♻️ Reset</button>
                 </div>
                 {{#each burger}}
-                    {{#if devoured}}
-                        {{> burger-consumed}}
-                    {{/if}}
+                {{#if devoured}}
+                {{> burger-consumed}}
+                {{/if}}
                 {{/each}}
 
             </div>

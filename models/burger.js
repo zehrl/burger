@@ -8,8 +8,8 @@ const burger = {
     },
 
     insertOne: (burger_name, cb) => {
-        orm.insertOne("burgers", burger_name, (res) => {
-            cb(res)
+        orm.insertOne("burgers", burger_name, (result) => {
+            cb(result)
         })
     }
 }

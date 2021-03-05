@@ -1,29 +1,36 @@
-$(function() {
-    // Elements
-    let $burgerInput = $("#burger-input")
-
-    // Values
-    let burgerInput = $burgerInput.val()
-
-
+$(function () {
 
     // Submit burger
-        // handle inserting data into burgers_db
-        // clear entry box
-    $("#burger-form").submit(function(event) {
+    $("#burger-form").submit(function (event) {
         event.preventDefault();
 
-        console.log(`burgerInput = ${burgerInput}`)
+        const $burgerInput = $("#burger-input")
+        console.log(`burgerInput = ${$burgerInput.val()}`)
+
+        const newBurger = {
+            burgerName: $burgerInput.val()
+        }
+        
+        // handle inserting data into burgers_db
+        $.ajax('/api/burger', {
+            type: 'POST',
+            data: newBurger
+        })
+        .then((res) => {
+            console.log("New burger added: ", res);
+            location.reload();
+        })
+
     })
 
 
     // Consume burger
-        // handle deleting entry in burgers_db
-        // render "Ready to Eat Burgers" list items
+    // handle deleting entry in burgers_db
+    // render "Ready to Eat Burgers" list items
 
     // Reset consumed burgers
-        // handle deleting all entries if burgers are consumed
-        // render "Consumed Burgers" list items
+    // handle deleting all entries if burgers are consumed
+    // render "Consumed Burgers" list items
 
 });
 

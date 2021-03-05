@@ -4,7 +4,7 @@ const burger = require('../models/burger');
 
 router.get('/', (req, res) => {
     burger.selectAll((data) => {
-        
+
         const hbsObject = {
             burger: data
         };
@@ -14,10 +14,10 @@ router.get('/', (req, res) => {
     })
 });
 
-router.post('/api/burger', ({body}, res) => {
-    burger.insertOne(body.burger_name, () => {
-        res.redirect('/')
-    })
-})
+router.post('/api/burger', ({ body }, res) => {
+    burger.insertOne(body.burgerName, (result) => {
+        res.json(result);
+    });
+});
 
 module.exports = router;

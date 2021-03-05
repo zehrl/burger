@@ -15,10 +15,10 @@ const orm = {
     // insertOne();
     insertOne: (table, burger_name, cb) => {
         connection.query(
-            `INSERT INTO ${table} (burger_name) VALUES ("${burger_name}")`,
-            (err, res) => {
+            `INSERT INTO ${table} (burger_name) VALUES ("${burger_name.toString()}")`,
+            (err, result) => {
                 if (err) { throw (err) }
-                cb(res);
+                cb(result);
             })
     }
 
