@@ -1,122 +1,129 @@
-{{!-- JUMBOTRON --}}
-<header>
-  <div id="burger-jumbotron" class="jumbotron text-center">
-    <h1 id="burger-title" class="display-4">Eat-the-Burger</h1>
-    <h2 id="slogan" class="lead">The most delicious app on the web.</h2>
-  </div>
-</header>
+<div id="content">
 
-<div id="content" class="container">
-
-  {{!-- TOASTS --}}
-
-  {{!-- When a Ready to Eat burger is consumed --}}
-  <div class="toast-container position-fixed bottom-0 right-0 p-3" style="z-index: 5; top: 0;">
-    <div id="consumed-toast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
-      <div class="toast-header">
-        <strong class="toast-header-title mr-auto">Burger Notification</strong>
-        <button type="button" class="ml-2 mb-1 close toast-x-btn" data-dismiss="toast" aria-label="Close">
-          <span class="toast-x-btn" aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="toast-body">
-        Yum! That burger was delicious!
-      </div>
+  {{!-- JUMBOTRON --}}
+  <header>
+    <div id="burger-jumbotron" class="jumbotron text-center">
+      <h1 id="burger-title" class="display-4">Eat-the-Burger</h1>
+      <h2 id="slogan" class="lead">The most delicious app on the web.</h2>
     </div>
-  </div>
+  </header>
 
-  {{!-- When Consumed Burgers table is reset --}}
-  <div class="toast-container position-fixed bottom-0 right-0 p-3" style="z-index: 5; top: 0;">
-    <div id="reset-toast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
-      <div class="toast-header">
-        <strong class="toast-header-title mr-auto">Burger Notification</strong>
-        <button type="button" class="ml-2 mb-1 close toast-x-btn" data-dismiss="toast" aria-label="Close">
-          <span class="toast-x-btn" aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="toast-body">
-        Consumed Burgers reset!
-      </div>
-    </div>
-  </div>
+  <div class="container">
+    <div id="content-inside">
 
-  {{!-- CONTENT --}}
-  <div class="row d-flex justify-content-center">
 
-    <div class="col col-md-10">
+      {{!-- TOASTS --}}
 
-      {{!-- BURGER FORM --}}
-      <form id="burger-form">
-
-        {{!-- LABEL --}}
-        <div class="form-row">
-          <div class="col-12">
-            <label for="burger-input">Insert burger name</label>
+      {{!-- When a Ready to Eat burger is consumed --}}
+      <div class="toast-container position-fixed bottom-0 right-0 p-3" style="z-index: 5; top: 0;">
+        <div id="consumed-toast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true"
+          data-delay="2000">
+          <div class="toast-header">
+            <strong class="toast-header-title mr-auto">Burger Notification</strong>
+            <button type="button" class="ml-2 mb-1 close toast-x-btn" data-dismiss="toast" aria-label="Close">
+              <span class="toast-x-btn" aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="toast-body">
+            Yum! That burger was delicious!
           </div>
         </div>
+      </div>
 
-        <div class="form-row">
-
-          {{!-- INPUT BOX --}}
-          <div class="col-sm-8 mb-3">
-            <input type="text" class="form-control" id="burger-input" placeholder="ex. Krabby Patty">
+      {{!-- When Consumed Burgers table is reset --}}
+      <div class="toast-container position-fixed bottom-0 right-0 p-3" style="z-index: 5; top: 0;">
+        <div id="reset-toast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true"
+          data-delay="2000">
+          <div class="toast-header">
+            <strong class="toast-header-title mr-auto">Burger Notification</strong>
+            <button type="button" class="ml-2 mb-1 close toast-x-btn" data-dismiss="toast" aria-label="Close">
+              <span class="toast-x-btn" aria-hidden="true">&times;</span>
+            </button>
           </div>
-
-          {{!-- SUBMIT --}}
-          <div class="col-sm-4 mb-3">
-            <button type="submit" id="burger-submit-btn" class="btn btn-primary btn-block">Submit</button>
+          <div class="toast-body">
+            Consumed Burgers reset!
           </div>
         </div>
+      </div>
 
-      </form>
+      {{!-- CONTENT --}}
+      <div class="row d-flex justify-content-center">
+
+        <div class="col col-md-10">
+
+          {{!-- BURGER FORM --}}
+          <form id="burger-form">
+
+            {{!-- LABEL --}}
+            <div class="form-row">
+              <div class="col-12">
+                <label for="burger-input">Insert burger name</label>
+              </div>
+            </div>
+
+            <div class="form-row">
+
+              {{!-- INPUT BOX --}}
+              <div class="col-sm-8 mb-3">
+                <input type="text" class="form-control" id="burger-input" placeholder="ex. Krabby Patty">
+              </div>
+
+              {{!-- SUBMIT --}}
+              <div class="col-sm-4 mb-3">
+                <button type="submit" id="burger-submit-btn" class="btn btn-primary btn-block">Submit</button>
+              </div>
+            </div>
+
+          </form>
 
 
-    </div>
-
-
-  </div>
-
-  <hr />
-
-  <div class="row d-flex justify-content-center">
-
-    <div class="col-md-6">
-
-      {{!-- READY-TO-EAT BURGERS --}}
-      <div class="card my-3 bg-primary text-light">
-        <div class="card-header">
-          🤤 Burgers Ready-to-Eat
         </div>
-        {{#each burger}}
-        {{#unless devoured}}
-        {{> burger }}
-        {{/unless}}
-        {{/each}}
+
+
+      </div>
+
+      <hr />
+
+      <div class="row d-flex justify-content-center">
+
+        <div class="col-md-6">
+
+          {{!-- READY-TO-EAT BURGERS --}}
+          <div class="card my-3 bg-primary text-light">
+            <div class="card-header">
+              🤤 Burgers Ready-to-Eat
+            </div>
+            {{#each burger}}
+            {{#unless devoured}}
+            {{> burger }}
+            {{/unless}}
+            {{/each}}
+          </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+          {{!-- CONSUMED BURGERs --}}
+          <div class="card my-3 bg-warning">
+            <div id="consumed-burgers-header" class="card-header d-flex justify-content-between align-items-center">
+              🍽️ Burgers Eaten (Total: {{consumedCount}})
+              <button type="button" id="reset-btn" class="btn btn-light">♻️ Reset</button>
+            </div>
+            {{#each burger}}
+            {{#if devoured}}
+            {{#if display}}
+            {{> burger-consumed}}
+            {{/if}}
+            {{/if}}
+            {{/each}}
+
+          </div>
+        </div>
       </div>
 
     </div>
-
-    <div class="col-md-6">
-
-      {{!-- CONSUMED BURGERs --}}
-      <div class="card my-3 bg-warning">
-        <div id="consumed-burgers-header" class="card-header d-flex justify-content-between align-items-center">
-          🍽️ Burgers Eaten (Total: {{consumedCount}})
-          <button type="button" id="reset-btn" class="btn btn-light">♻️ Reset</button>
-        </div>
-        {{#each burger}}
-        {{#if devoured}}
-        {{#if display}}
-        {{> burger-consumed}}
-        {{/if}}
-        {{/if}}
-        {{/each}}
-
-      </div>
-    </div>
   </div>
-
-
 </div>
 
 <footer class="text-center d-flex justify-content-center align-items-center">

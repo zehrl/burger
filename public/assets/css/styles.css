@@ -2,6 +2,11 @@
     background-color: #eccf99;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 /* ----- JUMBOTRON ----- */
 
 #burger-jumbotron {
@@ -28,18 +33,15 @@
     background-color: transparent;
 }
 
-/* ----- TOASTS ----- */
-
-.toast-container, .toast-x-btn {
-    background-color: transparent !important;
-}
-
-.toast, .toast-header, .toast-header-title{
-    background-color: white !important;
-}
-
-
 /* ----- CONTENT ----- */
+
+#content {
+    min-height: 100%;
+}
+
+#content-inside {
+    padding-bottom: 70px;
+}
 
 #reset-btn, .consume-btn {
     margin: -6px 0px;
@@ -50,13 +52,21 @@
     margin: -1px 0px;
 }
 
+/* ----- TOASTS ----- */
+
+.toast-container, .toast-x-btn {
+    background-color: transparent !important;
+}
+
+.toast, .toast-header, .toast-header-title{
+    background-color: white !important;
+}
+
 /* ----- FOOTER ----- */
 
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 4rem;
+    height: 70px;
+    margin-top: -70px;
 }
 
 #made-by, #git-hub-icon {
