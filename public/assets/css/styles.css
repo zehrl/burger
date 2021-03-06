@@ -42,6 +42,7 @@
 
 #reset-btn, .consume-btn {
     margin: -6px 0px;
+    padding: 6px 
 }
 
 #consumed-burgers-header {
