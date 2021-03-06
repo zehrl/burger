@@ -5,7 +5,9 @@ const burger = require('../models/burger');
 router.get('/', (req, res) => {
     burger.selectAll((data) => {
 
-        const consumedCount = Math.max(...data.map(entry => entry.id));
+        const consumedCount = data.filter((entry) => {
+            return entry.devoured;
+        }).length
 
         const hbsObject = {
             burger: data,
