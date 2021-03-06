@@ -29,6 +29,7 @@
 }
 
 /* ----- TOASTS ----- */
+
 .toast-container, .toast-x-btn {
     background-color: transparent !important;
 }
@@ -63,8 +64,6 @@ footer {
     font-weight: 300;
     color: rgba(0, 0, 0, 0.75);
 }
-
-
 
 /* ----- MEDIA QUERIES ----- */
 

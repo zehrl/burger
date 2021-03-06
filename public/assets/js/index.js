@@ -2,13 +2,14 @@ $(function () {
     // Element inits
     const $consumedToast = $('#consumed-toast');
     const $resetToast = $('#reset-toast');
+    const $burgerInput = $('#burger-input');
+    const $burgerSubmitBtn = $('#burger-submit-btn');
 
     // Toast Inits
-    $consumedToast.toast(true, true, 500)
-    $resetToast.toast(true, true, 500)
+    $consumedToast.toast(true, true, 500);
+    $resetToast.toast(true, true, 500);
 
-
-    // Local Storage
+    // Local Storage - used to handle toasts
     let burgerLS = window.localStorage;
 
     if (burgerLS.getItem("didConsume")) {
@@ -19,21 +20,21 @@ $(function () {
         $resetToast.toast('show');
     }
 
+    // Clear local storage after toast is displayed
     burgerLS.clear();
 
     // Disable submit button when there is no input
-    $('#burger-input').keyup(function (event) {
+    $burgerInput.keyup(function (event) {
         // Determine input value
-        const burgerInputVal = $('#burger-input').val().trim();
+        const burgerInputVal = $burgerInput.val().trim();
 
         // If null or just spaces, then disable button
         if ((burgerInputVal === "") || (burgerInputVal.length > 64)) {
-            $('#burger-submit-btn').attr('disabled', true);
-            $('#burger-submit-btn').attr('aria-disabled', true);
+            $burgerSubmitBtn.attr('disabled', true);
+            $burgerSubmitBtn.attr('aria-disabled', true);
         } else {
-            console.log('Removing disabled class from button.')
-            $('#burger-submit-btn').removeAttr('disabled');
-            $('#burger-submit-btn').removeAttr('aria-disabled');
+            $burgerSubmitBtn.removeAttr('disabled');
+            $burgerSubmitBtn.removeAttr('aria-disabled');
 
         }
     })
@@ -41,8 +42,6 @@ $(function () {
     // Submit burger
     $("#burger-form").submit(function (event) {
         event.preventDefault();
-
-        const $burgerInput = $("#burger-input")
 
         const newBurger = {
             burgerName: $burgerInput.val().trim()
@@ -76,7 +75,7 @@ $(function () {
             });
     })
 
-    // handle hiding entries in burgers_db
+    // handle hiding entries in database
     $("#reset-btn").on("click", () => {
         $.ajax("/api/burger/devoured", {
             type: "PUT"
